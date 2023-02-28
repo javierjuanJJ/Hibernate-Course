@@ -1,4 +1,4 @@
-package domain;
+package com.example.projecthibernatejpa_springboot.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,6 +1,6 @@
-package resources;
+package com.example.projecthibernatejpa_springboot.resources;
 
-import domain.User;
+import com.example.projecthibernatejpa_springboot.domain.User;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import services.UserService;
+import com.example.projecthibernatejpa_springboot.services.UserService;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package Dao;
+package com.example.projecthibernatejpa_springboot.Dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
