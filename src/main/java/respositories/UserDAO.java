@@ -11,7 +11,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
-public class UserDAO implements GenericDAO<User> {
+public class UserDAO implements GenericDAO<Object> {
     @Autowired
     private EntityManager em;
     private EntityManagerFactory emf;
@@ -22,7 +22,7 @@ public class UserDAO implements GenericDAO<User> {
 
     @Transactional
     @Override
-    public void create(User object) throws Exception {
+    public void create(Object object) throws Exception {
 
         //Iniciamos una transacción
         em.getTransaction().begin();
@@ -35,7 +35,7 @@ public class UserDAO implements GenericDAO<User> {
     }
 
     @Override
-    public void delete(User object) throws Exception {
+    public void delete(Object object) throws Exception {
 
         if (em.contains(object))
             em.remove(object);
@@ -44,17 +44,17 @@ public class UserDAO implements GenericDAO<User> {
     }
     @Transactional
     @Override
-    public List<User> getAll() throws Exception {
+    public List<Object> getAll() throws Exception {
         em = Connection.createConnection();
         emf = Connection.createConnection2();
-        List<User> listUsers = em.createQuery("from User ").getResultList();
+        List listUsers = em.createQuery("from User ").getResultList();
         Connection.close2();
         Connection.close();
         return listUsers;
     }
 
     @Override
-    public User getById(int id) throws Exception {
+    public Object getById(int id) throws Exception {
 
 
         User user = em.find(User.class, id);
@@ -66,7 +66,7 @@ public class UserDAO implements GenericDAO<User> {
     }
 
     @Override
-    public void update(User object) throws Exception {
+    public void update(Object object) throws Exception {
 
         em.merge(object);
 
